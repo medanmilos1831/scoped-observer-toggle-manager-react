@@ -44,16 +44,16 @@ const HomePage = () => {
     <>
         <EventToggleManagerWrapper name="userModal">
             {({ status, payload, toggle }) => {
-            return (
-                <Modal
-                open={status}
-                onCancel={() => {
-                    toggle();
-                }}
-                >
-                    <ModalComponent />
-                </Modal>
-            );
+                return (
+                    <Modal
+                    open={status}
+                    onCancel={() => {
+                        toggle();
+                    }}
+                    >
+                        <ModalComponent />
+                    </Modal>
+                );
             }}
         </EventToggleManagerWrapper>
       </>
