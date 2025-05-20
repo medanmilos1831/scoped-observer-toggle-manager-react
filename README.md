@@ -50,13 +50,8 @@ const HomePage = () => {
                 onCancel={() => {
                     toggle();
                 }}
-                onOk={() => {
-                    eventToggleHandler({
-                    name: 'two',
-                    });
-                }}
                 >
-                <ModalComponent />
+                    <ModalComponent />
                 </Modal>
             );
             }}
