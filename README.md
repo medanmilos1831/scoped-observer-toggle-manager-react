@@ -27,11 +27,9 @@ This service uses a centralized, encapsulated manager and scoped events to updat
 
 - React's useState and useEffect
 
-- Custom EventToggleManager class for non-reactive global state tracking
-
 ## 📦 Usage
 
-Wrap your component with EventToggleManagerWrapper
+Wrap your component with ToggleController
 
 ```
 import {
