@@ -35,14 +35,14 @@ Wrap your component with EventToggleManagerWrapper
 
 ```
 import {
-  EventToggleManagerWrapper,
-  eventToggleHandler,
+  ToggleController,
+  toggleHandler,
 } from 'toggle-event-service';
 
 const HomePage = () => {
   return (
     <>
-        <EventToggleManagerWrapper name="userModal">
+        <ToggleController name="userModal">
             {({ status, payload, toggle }) => {
                 return (
                     <Modal
@@ -55,7 +55,7 @@ const HomePage = () => {
                     </Modal>
                 );
             }}
-        </EventToggleManagerWrapper>
+        </ToggleController>
       </>
   );
 };
@@ -64,11 +64,11 @@ const HomePage = () => {
 Trigger externally (optional)
 
 ```
-eventToggleHandler({ name: 'userModal' });
+toggleHandler({ name: 'userModal' });
 ```
 
 or
 
 ```
-eventToggleHandler({ name: 'userModal', payload: { userId: 42 } });
+toggleHandler({ name: 'userModal', payload: { userId: 42 } });
 ```
