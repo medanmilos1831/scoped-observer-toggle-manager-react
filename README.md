@@ -1,4 +1,4 @@
-# Toggle Event Service
+# Scoped observer toggle manager react
 
 A lightweight, event-driven toggle service for React applications.  
 Designed for full flexibility, deep encapsulation, and zero direct state access — ideal for managing modals, drawers, or any toggleable UI component.
@@ -16,7 +16,7 @@ Designed for full flexibility, deep encapsulation, and zero direct state access 
 ## 🚀 Installation
 
 ```bash
-npm install toggle-event-service
+npm i scoped-observer-toggle-manager-react
 ```
 
 ## 🧠 Core Concepts
