@@ -1,7 +1,7 @@
 {
   "homepage": "https://github.com/medanmilos1831/scoped-observer-toggle-manager-react#readme",
   "name": "scoped-observer-toggle-manager-react",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
@@ -29,7 +29,7 @@
     "typescript": "^5.8.3"
   },
   "dependencies": {
-    "scoped-observer": "^1.0.5"
+    "scoped-observer": "^1.0.8"
   },
   "peerDependencies": {
     "react": "18.3.1"

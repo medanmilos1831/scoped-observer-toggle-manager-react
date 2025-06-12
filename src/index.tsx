@@ -1,11 +1,6 @@
 import { useEffect, useState } from 'react';
-import { dispatch, subscribe } from 'scoped-observer';
+import { createEventManager } from 'scoped-observer';
 import { IToggleState } from './types';
-import { EventScope } from './EventScope';
-
-const { hash } = new EventScope();
-
-// Singleton instance of the toggle manager (internal, non-reactive)
 
 /**
  * A React component wrapper that connects a component to the global
@@ -15,6 +10,13 @@ const { hash } = new EventScope();
  * @param children - Render prop that receives the current toggle state.
  * @returns JSX element rendered by the children function.
  */
+
+const manager = createEventManager([
+  {
+    scope: 'toggleManager',
+  },
+]);
+
 const ToggleController = ({
   initStatus = false,
   name,
@@ -37,8 +39,8 @@ const ToggleController = ({
 
   useEffect(() => {
     // Subscribe to toggle events for this specific scope
-    const unsubscribe = subscribe({
-      scope: `${hash}`,
+    const unsubscribe = manager.subscribe({
+      scope: 'toggleManager',
       eventName: name,
       callback({ payload }) {
         // Trigger local re-render with updated state
@@ -74,8 +76,8 @@ function toggleHandler({
   name: string;
   payload?: any;
 }) {
-  dispatch({
-    scope: `${hash}`,
+  manager.dispatch({
+    scope: 'toggleManager',
     eventName: name,
     payload,
   });
